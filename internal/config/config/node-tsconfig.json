@@ -1,0 +1,26 @@
+{
+  "extends": "@tsconfig/node14/tsconfig.json",
+  "compilerOptions": {
+    "types": ["node", "jest"],
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "pretty": true,
+    "composite": true,
+
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "removeComments": false,
+    "stripInternal": true,
+
+    "experimentalDecorators": false,
+    "incremental": true,
+    "isolatedModules": true,
+
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "useDefineForClassFields": true
+  }
+}

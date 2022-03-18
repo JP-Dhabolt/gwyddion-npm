@@ -1,0 +1,24 @@
+{
+  "extends": "@tsconfig/create-react-app/tsconfig.json",
+  "compilerOptions": {
+    "types": ["node", "jest", "webpack-env"],
+    "resolveJsonModule": true,
+    "pretty": true,
+    "composite": true,
+
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "removeComments": false,
+    "stripInternal": true,
+
+    "experimentalDecorators": false,
+    "incremental": true,
+    "isolatedModules": true,
+
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "useDefineForClassFields": true
+  }
+}

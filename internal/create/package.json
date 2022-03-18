@@ -1,0 +1,26 @@
+{
+  "name": "@internal/create",
+  "version": "0.1.0",
+  "description": "Create a new project within the repo",
+  "main": "dist/index.js",
+  "private": true,
+  "files": [
+    "dist/**/*.js",
+    "template"
+  ],
+  "scripts": {
+    "test": "echo \"Static config only\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JP-Dhabolt/gwyddion-npm.git",
+    "directory": "internal/create"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JP-Dhabolt/gwyddion-npm/issues"
+  },
+  "homepage": "https://github.com/JP-Dhabolt/gwyddion-npm#readme"
+}

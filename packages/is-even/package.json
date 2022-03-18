@@ -1,0 +1,21 @@
+{
+  "name": "@gwyddion/is-even",
+  "version": "0.1.0",
+  "description": "",
+  "publishConfig": {
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts"
+  },
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --coverage",
+    "watch": "jest --watch",
+    "build": "tsc -b .",
+    "check": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
