@@ -8,20 +8,27 @@ jobs:
   validate:
     name: Validate
     runs-on: ubuntu-latest
-    container: mcr.microsoft.com/vscode/devcontainers/javascript-node:0-14-bullseye
+
+    strategy:
+      matrix:
+        node_version:
+          - '14'
+          - '16'
+
+    env:
+      NPM_VERSION: '8.4.1'
+
     steps:
       - uses: actions/checkout@v2
 
-      - name: Ensure correct npm version
-        run: npm i -g npm@8.4.1
-
-      - name: NPM Cache
-        uses: actions/cache@v2
+      - name: Setup Node Version ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
+          node-version: ${{ matrix.node_version }}
+          cache: npm
+
+      - name: Pin npm version
+        run: npm i -g npm@$NPM_VERSION
 
       - name: Verify Packages
         run: make verify
