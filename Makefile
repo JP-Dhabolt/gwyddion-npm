@@ -3,7 +3,7 @@ package-path = packages/${name}
 jest-config = jest.config.js
 ts-config = tsconfig.json
 
-.PHONY: help install setup test-ci lint lint-ci lint-staged check build verify package precommit changeset
+.PHONY: help install setup test-ci lint lint-ci lint-staged check build verify package precommit changeset publish
 
 .DEFAULT: help
 
@@ -44,6 +44,9 @@ help:
 	@echo "make changeset"
 	@echo "    Generate a changeset"
 	@echo ""
+	@echo "make publish"
+	@echo "    Publish the current changes (meant for automation only)"
+	@echo ""
 
 install:
 	npm ci
@@ -80,3 +83,6 @@ precommit: check lint-staged
 
 changeset:
 	npx changeset
+
+publish: build
+	npx changeset publish

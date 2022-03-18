@@ -1,0 +1,38 @@
+name: Publish Packages
+on:
+  push:
+    branches:
+      - main
+
+concurrency: changeset-publish
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+
+    env:
+      NPM_VERSION: '8.4.1'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node 14
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+          cache: npm
+
+      - name: Pin npm version
+        run: npm i -g npm@$NPM_VERSION
+
+      - name: Install Dependencies
+        run: make install
+
+      - name: Create Publish PR or Publish to NPM
+        uses: changesets/action@v1
+        with:
+          publish: make publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
