@@ -12,6 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Ensure correct npm version
+        run: npm i -g npm@8.4.1
+
       - name: NPM Cache
         uses: actions/cache@v2
         with:
