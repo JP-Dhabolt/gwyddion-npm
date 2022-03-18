@@ -1,0 +1,24 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/vscode/devcontainers/javascript-node:0-14-bullseye
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: NPM Cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
+      - name: Verify Packages
+        run: make verify

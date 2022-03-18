@@ -22,7 +22,6 @@
   },
   "scripts": {
     "test": "npm run test --workspaces",
-    "commit": "npm run check && lint-staged",
     "build": "npm run build --workspaces --if-present",
     "check": "npm run check --workspaces --if-present",
     "lint": "eslint --fix --ext .js --ext .ts --ext .jsx --ext .tsx .",
