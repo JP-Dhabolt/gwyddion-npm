@@ -1,0 +1,24 @@
+{
+  "name": "@internal/tests",
+  "version": "0.1.0",
+  "description": "Tests for internal functionality",
+  "private": true,
+  "files": [],
+  "scripts": {
+    "test": "jest --coverage",
+    "watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JP-Dhabolt/gwyddion-npm.git",
+    "directory": "internal/tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JP-Dhabolt/gwyddion-npm/issues"
+  },
+  "homepage": "https://github.com/JP-Dhabolt/gwyddion-npm#readme",
+  "dependencies": {}
+}

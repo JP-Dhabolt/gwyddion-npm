@@ -1,0 +1,15 @@
+{
+  "extends": "@internal/config/config/node-tsconfig.json",
+  "include": [
+    "./**/*.ts",
+    "../../scripts/*.js"
+  ],
+  "exclude": [
+    "internal/tests/dist",
+    "packages/**"
+  ],
+  "compilerOptions": {
+    "outDir": "internal/tests/dist",
+    "rootDir": "../../"
+  },
+}
