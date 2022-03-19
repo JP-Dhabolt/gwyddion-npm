@@ -12,12 +12,10 @@ permissions:
 jobs:
   create_changeset:
     runs-on: ubuntu-latest
-    if: >
-      ${{
-        github.event.pull_request.user.login == 'dependabot[bot]'
-        && github.repository == 'JP-Dhabolt/gwyddion-npm'
-        && startsWith(github.event.pull_request.head.ref, 'dependabot/')
-      }}
+    if: |
+        github.event.pull_request.user.login == 'dependabot[bot]' &&
+        github.repository == 'JP-Dhabolt/gwyddion-npm' &&
+        startsWith(github.event.pull_request.head.ref, 'dependabot/')
     steps:
       # Checking out the main branch for access to the trusted script
       - uses: actions/checkout@v3
@@ -56,36 +54,30 @@ jobs:
             return await handleChangesets({ context, exec, fs });
 
       - name: Enable auto-merge for Dependabot PRs
-        if: >
-          ${{
+        if: |
             (
-              steps.metadata.outputs.update-type == 'version-update:semver-patch'
-              || steps.metadata.outputs.update-type == 'version-update:semver-minor'
-            )
-            &&
+              steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
+              steps.metadata.outputs.update-type == 'version-update:semver-minor'
+            ) &&
             (
-              steps.gen_changeset.outputs.result == 'CHANGES'
-              || steps.gen_changeset.outputs.result == 'NO_CHANGES'
+              steps.gen_changeset.outputs.result == 'CHANGES' ||
+              steps.gen_changeset.outputs.result == 'NO_CHANGES'
             )
-          }}
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Approve PR
-        if: >
-          ${{
+        if: |
             (
-              steps.metadata.outputs.update-type == 'version-update:semver-patch'
-              || steps.metadata.outputs.update-type == 'version-update:semver-minor'
-            )
-            &&
+              steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
+              steps.metadata.outputs.update-type == 'version-update:semver-minor'
+            ) &&
             (
-              steps.gen_changeset.outputs.result == 'CHANGES'
-              || steps.gen_changeset.outputs.result == 'NO_CHANGES'
+              steps.gen_changeset.outputs.result == 'CHANGES' ||
+              steps.gen_changeset.outputs.result == 'NO_CHANGES'
             )
-          }}
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
