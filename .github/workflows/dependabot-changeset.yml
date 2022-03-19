@@ -1,0 +1,91 @@
+name: Create Dependabot Changeset
+on:
+  pull_request_target:
+    paths:
+      - 'packages/*/package.json'
+      - 'yarn.lock'
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  create_changeset:
+    runs-on: ubuntu-latest
+    if: >
+      ${{
+        github.event.pull_request.user.login == 'dependabot[bot]'
+        && github.repository == 'JP-Dhabolt/gwyddion-npm'
+        && startsWith(github.event.pull_request.head.ref, 'dependabot/')
+      }}
+    steps:
+      # Checking out the main branch for access to the trusted script
+      - uses: actions/checkout@v3
+        with:
+          path: 'mainBranch'
+
+      # Checking out the PR branch to determine changesets and push them
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+          ref: ${{ github.head_ref }}
+          path: 'prBranch'
+
+      # Using dependabot metadata to make decisions regarding changesets and approvals
+      - name: Fetch Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.3.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Git
+        run: |
+          git config --global user.email github-actions@github.com
+          git config --global user.name 'Github Actions'
+
+      - name: Generate Changeset
+        id: gen_changeset
+        uses: actions/github-script@v6
+        env:
+          DEPENDENCY_TYPE: ${{ steps.metadata.outputs.dependency-type }}
+        with:
+          result-encoding: string
+          script: |
+            const { promises: fs } = require('fs');
+            const { handleChangesets } = require('./mainBranch/scripts/changesetCreator');
+            return await handleChangesets({ context, exec, fs });
+
+      - name: Enable auto-merge for Dependabot PRs
+        if: >
+          ${{
+            (
+              steps.metadata.outputs.update-type == 'version-update:semver-patch'
+              || steps.metadata.outputs.update-type == 'version-update:semver-minor'
+            )
+            &&
+            (
+              steps.gen_changeset.outputs.result == 'CHANGES'
+              || steps.gen_changeset.outputs.result == 'NO_CHANGES'
+            )
+          }}
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Approve PR
+        if: >
+          ${{
+            (
+              steps.metadata.outputs.update-type == 'version-update:semver-patch'
+              || steps.metadata.outputs.update-type == 'version-update:semver-minor'
+            )
+            &&
+            (
+              steps.gen_changeset.outputs.result == 'CHANGES'
+              || steps.gen_changeset.outputs.result == 'NO_CHANGES'
+            )
+          }}
+        run: gh pr review --approve "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
