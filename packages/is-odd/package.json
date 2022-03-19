@@ -1,11 +1,11 @@
 {
   "name": "@gwyddion/is-odd",
   "version": "0.1.0",
-  "description": "",
+  "description": "Test package to determine if a number is odd",
   "publishConfig": {
+    "access": "public",
     "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "access": "public"
+    "types": "dist/index.d.ts"
   },
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -13,11 +13,21 @@
     "test": "jest --coverage",
     "watch": "jest --watch",
     "build": "tsc -b .",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "package": "internalPackage"
   },
   "keywords": [],
-  "author": "",
+  "author": "JP Dhabolt",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JP-Dhabolt/gwyddion-npm.git",
+    "directory": "packages/is-odd"
+  },
+  "bugs": {
+    "url": "https://github.com/JP-Dhabolt/gwyddion-npm/issues"
+  },
+  "homepage": "https://github.com/JP-Dhabolt/gwyddion-npm/tree/main/packages/is-odd",
   "dependencies": {
     "@gwyddion/is-even": "^0.1.0"
   }

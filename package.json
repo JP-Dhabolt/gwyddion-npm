@@ -25,7 +25,8 @@
     "build": "npm run build --workspaces --if-present",
     "check": "npm run check --workspaces --if-present",
     "lint": "eslint --fix --ext .js --ext .ts --ext .jsx --ext .tsx .",
-    "lint:ci": "eslint --ext .js --ext .ts --ext .jsx --ext .tsx ."
+    "lint:ci": "eslint --ext .js --ext .ts --ext .jsx --ext .tsx .",
+    "package": "npm run package --workspaces --if-present"
   },
   "engines": {
     "node": "14 || 16"
