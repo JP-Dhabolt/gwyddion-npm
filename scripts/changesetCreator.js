@@ -50,8 +50,11 @@ async function handleChangesets({ context, exec, fs }) {
 
   process.chdir(`./${PR_BRANCH}`);
 
+  const { sha } = context.payload.pull_request.head;
+  const changesetFile = `${CHANGESET_DIR}/dependabot-${sha}.md`;
+
   const diffFiles = await getChangedFiles(exec);
-  if (diffFiles.find(f => f.startsWith(CHANGESET_DIR))) {
+  if (diffFiles.find(f => f === changesetFile)) {
     console.log('Changeset already created, skipping');
     return SKIPPED;
   }
@@ -62,8 +65,6 @@ async function handleChangesets({ context, exec, fs }) {
     return NO_CHANGES;
   }
 
-  const { sha } = context.payload.pull_request.head;
-  const changesetFile = `${CHANGESET_DIR}/dependabot-${sha}.md`;
   await createChangeset(fs, changedPackages, context, changesetFile);
   await commitAndPushChanges(exec, changesetFile);
   return CHANGES;
