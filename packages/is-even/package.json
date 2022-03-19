@@ -1,14 +1,12 @@
 {
   "name": "@gwyddion/is-even",
   "version": "0.1.1",
-  "description": "",
+  "description": "Test package to determine if a number is even",
   "publishConfig": {
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
     "access": "public"
   },
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "devDependencies": {},
   "scripts": {
     "test": "jest --coverage",
@@ -17,6 +15,15 @@
     "check": "tsc --noEmit"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "JP Dhabolt",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JP-Dhabolt/gwyddion-npm.git",
+    "directory": "packages/is-even"
+  },
+  "bugs": {
+    "url": "https://github.com/JP-Dhabolt/gwyddion-npm/issues"
+  },
+  "homepage": "https://github.com/JP-Dhabolt/gwyddion-npm/tree/main/packages/is-even"
 }
