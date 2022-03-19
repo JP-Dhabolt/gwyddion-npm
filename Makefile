@@ -87,4 +87,5 @@ changeset:
 	npx changeset
 
 publish: build
+	npm run package
 	npx changeset publish

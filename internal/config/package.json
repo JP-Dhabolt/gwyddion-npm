@@ -2,14 +2,12 @@
   "name": "@internal/config",
   "version": "0.1.0",
   "description": "Internal package for configuration related to monorepo",
-  "main": "dist/index.js",
   "private": true,
-  "files": [
-    "dist/**/*.js",
-    "config"
-  ],
   "scripts": {
     "test": "echo \"Static config only\" && exit 0"
+  },
+  "bin": {
+    "internalPackage": "./src/package.js"
   },
   "repository": {
     "type": "git",
