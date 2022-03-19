@@ -21,6 +21,10 @@
     "url": "git+https://github.com/JP-Dhabolt/gwyddion-npm.git",
     "directory": "packages/is-odd"
   },
+  "bugs": {
+    "url": "https://github.com/JP-Dhabolt/gwyddion-npm/issues"
+  },
+  "homepage": "https://github.com/JP-Dhabolt/gwyddion-npm/tree/main/packages/is-odd",
   "dependencies": {
     "@gwyddion/is-even": "^0.1.0"
   }
