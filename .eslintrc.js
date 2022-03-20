@@ -19,7 +19,6 @@ module.exports = {
     '**/dist/**',
     'node_modules/',
     'coverage/',
-    'packages/create/templates/default/package.json'
   ],
   rules: {
     "prettier/prettier": "error",
