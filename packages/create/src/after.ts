@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 
+import fs from 'fs';
 import { resolve } from 'path';
 import { AfterHookOptions } from 'create-create-app';
 
@@ -11,18 +12,15 @@ function cleanupCrapThatCreateAppCliGeneratesWithoutAsking({
     cwd: resolve(packageDir, '..', '..'),
   });
 
-  run('rm -rf .git/', {
-    cwd: packageDir,
-  });
-
-  run('rm yarn.lock', {
-    cwd: packageDir,
-  });
+  fs.rmdirSync(resolve(packageDir, '.git'));
+  fs.unlinkSync(resolve(packageDir, 'yarn.lock'));
 }
 
-export function after({ run, packageDir, answers }: AfterHookOptions): void {
+export async function after({ run, packageDir, answers }: AfterHookOptions): Promise<void> {
   if (answers.isGwyddion) {
     cleanupCrapThatCreateAppCliGeneratesWithoutAsking({ run, packageDir });
   }
+
+  fs.renameSync(resolve(packageDir, 'package.json.handlebars'), resolve(packageDir, 'package.json'));
   console.log(`Your package is available at ${packageDir}.  Happy coding!`);
 }
