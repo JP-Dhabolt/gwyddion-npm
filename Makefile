@@ -70,7 +70,7 @@ build:
 verify: install test-ci lint-ci build
 
 package:
-	npm init --scope=@gwyddion -w packages/${name} @gwyddion .
+	npm init -w packages/${name} @gwyddion . --scope=@gwyddion --isGwyddion
 
 precommit: check lint-staged
 
