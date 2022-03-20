@@ -1,0 +1,12 @@
+# Ignore Everything
+**/*
+
+# Unignore files we specifically want
+!dist/**/*.js
+!dist/**/*.d.ts
+!templates
+!CHANGELOG.md
+
+# Re-ignore test files
+dist/**/*.spec.js
+dist/**/*.spec.d.ts

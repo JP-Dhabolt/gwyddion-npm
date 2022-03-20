@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import { handleChangesets } from '../../../scripts/changesetCreator';
 
 const mockChdir = jest.fn();
@@ -13,6 +15,7 @@ const mockFs = {
 describe('changesetCreator', () => {
   const ORIGINAL_ENV = process.env;
   const ORIGINAL_CHDIR = process.chdir;
+  const ORIGINAL_LOG = console.log;
   const input = {
     context: {
       payload: {
@@ -37,11 +40,13 @@ describe('changesetCreator', () => {
     mockFs.readFile.mockClear();
     mockFs.writeFile.mockClear();
     process.chdir = mockChdir;
+    console.log = jest.fn();
   });
 
   afterAll(() => {
     process.env = ORIGINAL_ENV;
     process.chdir = ORIGINAL_CHDIR;
+    console.log = ORIGINAL_LOG;
   });
 
   it('should return "NO_CHANGES" if not prod dependency', async () => {

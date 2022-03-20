@@ -1,0 +1,7 @@
+# Ignore Everything
+**/*
+
+# Unignore files we specifically want
+!files/*
+!src/**/*.js
+!CHANGELOG.md

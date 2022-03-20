@@ -1,18 +1,21 @@
 {
-  "name": "@internal/config",
+  "name": "@gwyddion/config",
   "version": "0.1.0",
-  "description": "Internal package for configuration related to monorepo",
-  "private": true,
+  "description": "Package for configuration related to monorepo",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "test": "echo \"Static config only\" && exit 0"
+    "test": "echo \"Static config only\" && exit 0",
+    "package": "exit 0"
   },
   "bin": {
-    "internalPackage": "./src/package.js"
+    "gwyddionPackage": "./src/package.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JP-Dhabolt/gwyddion-npm.git",
-    "directory": "internal/config"
+    "directory": "packages/config"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/JP-Dhabolt/gwyddion-npm/issues"
   },
-  "homepage": "https://github.com/JP-Dhabolt/gwyddion-npm#readme",
+  "homepage": "https://github.com/JP-Dhabolt/gwyddion-npm/tree/main/packages/config",
   "dependencies": {
     "@tsconfig/create-react-app": "^1.0.2",
     "@tsconfig/node14": "^1.0.1"

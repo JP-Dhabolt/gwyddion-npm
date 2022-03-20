@@ -14,7 +14,7 @@
     "watch": "jest --watch",
     "build": "tsc -b .",
     "check": "tsc --noEmit",
-    "package": "internalPackage"
+    "package": "gwyddionPackage"
   },
   "keywords": [],
   "author": "JP Dhabolt",
