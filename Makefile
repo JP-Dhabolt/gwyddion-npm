@@ -1,9 +1,3 @@
-template-path = internal/create/template
-package-path = packages/${name}
-jest-config = jest.config.js
-ts-config = tsconfig.json
-npm-ignore = .npmignore
-
 .PHONY: help install setup test-ci lint lint-ci lint-staged check build verify package precommit changeset publish
 
 .DEFAULT: help
@@ -76,10 +70,7 @@ build:
 verify: install test-ci lint-ci build
 
 package:
-	npm init --scope=@gwyddion -y -w ${package-path}
-	cp ${template-path}/${jest-config} ${package-path}/${jest-config}
-	cp ${template-path}/${ts-config} ${package-path}/${ts-config}
-	cp ${template-path}/${npm-ignore} ${package-path}/${npm-ignore}
+	npm init --scope=@gwyddion -w packages/${name} @gwyddion .
 
 precommit: check lint-staged
 

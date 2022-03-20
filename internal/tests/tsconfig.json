@@ -1,5 +1,5 @@
 {
-  "extends": "@internal/config/config/node-tsconfig.json",
+  "extends": "@gwyddion/config/files/node-tsconfig.json",
   "include": [
     "./**/*.ts",
     "../../scripts/*.js"

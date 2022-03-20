@@ -4,7 +4,8 @@
     "./**/*.ts"
   ],
   "exclude": [
-    "dist"
+    "dist",
+    "templates"
   ],
   "compilerOptions": {
     "outDir": "dist",

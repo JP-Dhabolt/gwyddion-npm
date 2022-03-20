@@ -1,7 +1,7 @@
 {
-  "name": "@gwyddion/is-even",
-  "version": "0.1.2",
-  "description": "Test package to determine if a number is even",
+  "name": "@gwyddion/{{name}}",
+  "version": "0.1.0",
+  "description": "{{description}}",
   "publishConfig": {
     "access": "public",
     "main": "dist/index.js",
@@ -23,10 +23,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JP-Dhabolt/gwyddion-npm.git",
-    "directory": "packages/is-even"
+    "directory": "packages/{{name}}"
   },
   "bugs": {
     "url": "https://github.com/JP-Dhabolt/gwyddion-npm/issues"
   },
-  "homepage": "https://github.com/JP-Dhabolt/gwyddion-npm/tree/main/packages/is-even"
+  "homepage": "https://github.com/JP-Dhabolt/gwyddion-npm/tree/main/packages/{{name}}"
 }

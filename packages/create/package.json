@@ -1,0 +1,34 @@
+{
+  "name": "@gwyddion/create",
+  "description": "Create a new package in this repo",
+  "version": "0.1.0",
+  "author": "JP Dhabolt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -b .",
+    "check": "tsc --noEmit",
+    "package": "exit 0",
+    "test": "exit 0"
+  },
+  "bin": "dist/cli.js",
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "dependencies": {
+    "create-create-app": "^7.0.0"
+  },
+  "license": "ISC",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JP-Dhabolt/gwyddion-npm.git",
+    "directory": "packages/create"
+  },
+  "bugs": {
+    "url": "https://github.com/JP-Dhabolt/gwyddion-npm/issues"
+  },
+  "homepage": "https://github.com/JP-Dhabolt/gwyddion-npm/tree/main/packages/create"
+}
