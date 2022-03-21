@@ -2,8 +2,9 @@ name: Create Dependabot Changeset
 on:
   pull_request_target:
     paths:
+      - 'package.json'
       - 'packages/*/package.json'
-      - 'yarn.lock'
+      - 'package-lock.json'
 
 permissions:
   pull-requests: write
