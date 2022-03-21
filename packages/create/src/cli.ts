@@ -23,4 +23,5 @@ create('create-package', {
     },
   },
   after,
+  caveat: ({ packageDir }) => `Your package is available at ${packageDir}.  Happy coding!`,
 });

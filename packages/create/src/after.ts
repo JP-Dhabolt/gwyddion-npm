@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import fs from 'fs';
 import { resolve } from 'path';
 import { AfterHookOptions } from 'create-create-app';
@@ -29,6 +27,4 @@ export async function after({ run, packageDir, answers }: AfterHookOptions): Pro
   if (answers.isGwyddion) {
     cleanupCrapThatCreateAppCliGeneratesWithoutAsking({ run, packageDir });
   }
-
-  console.log(`Your package is available at ${packageDir}.  Happy coding?`);
 }
