@@ -1,20 +1,15 @@
-/* eslint-disable no-console */
-
 import fs from 'fs';
 import { resolve } from 'path';
 import { AfterHookOptions } from 'create-create-app';
 
-type LogFunction = (m: string) => void;
-
-function cleanupCrapThatCreateAppCliGeneratesWithoutAsking(
-  { run, packageDir }: Pick<AfterHookOptions, 'run' | 'packageDir'>,
-  log: LogFunction,
-): void {
-  log(`Removing ${resolve(packageDir, '.git')}`);
-  fs.rmdirSync(resolve(packageDir, '.git'));
-  log(`Removing ${resolve(packageDir, 'yarn.lock')}`);
-  fs.unlinkSync(resolve(packageDir, 'yarn.lock'));
-  log(`Removing ${resolve(packageDir, 'LICENSE')}`);
+function cleanupCrapThatCreateAppCliGeneratesWithoutAsking({
+  run,
+  packageDir,
+}: Pick<AfterHookOptions, 'run' | 'packageDir'>): void {
+  fs.rmSync(resolve(packageDir, '.git'), {
+    recursive: true,
+    force: true,
+  });
   fs.unlinkSync(resolve(packageDir, 'LICENSE'));
 
   run('npm install', {
@@ -22,23 +17,14 @@ function cleanupCrapThatCreateAppCliGeneratesWithoutAsking(
   });
 }
 
-function standardAfterWork({ packageDir }: Pick<AfterHookOptions, 'packageDir'>, log: LogFunction): void {
-  log(`Renaming ${resolve(packageDir, 'package.json.handlebars')} to ${resolve(packageDir, 'package.json')}`);
+function standardAfterWork({ packageDir }: Pick<AfterHookOptions, 'packageDir'>): void {
   fs.renameSync(resolve(packageDir, 'package.json.handlebars'), resolve(packageDir, 'package.json'));
 }
 
 export async function after({ run, packageDir, answers }: AfterHookOptions): Promise<void> {
-  const debugLog = (message: string) => {
-    if (answers.debug) {
-      console.log(message);
-    }
-  };
-
-  standardAfterWork({ packageDir }, debugLog);
+  standardAfterWork({ packageDir });
 
   if (answers.isGwyddion) {
-    cleanupCrapThatCreateAppCliGeneratesWithoutAsking({ run, packageDir }, debugLog);
+    cleanupCrapThatCreateAppCliGeneratesWithoutAsking({ run, packageDir });
   }
-
-  console.log(`Your package is available at ${packageDir}.  Happy coding!`);
 }
