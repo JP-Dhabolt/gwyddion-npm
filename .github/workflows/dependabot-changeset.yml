@@ -29,6 +29,7 @@ jobs:
           fetch-depth: 2
           ref: ${{ github.head_ref }}
           path: 'prBranch'
+          token: ${{ secrets.GWYDDION_AUTOMATION_TOKEN }}
 
       # Using dependabot metadata to make decisions regarding changesets and approvals
       - name: Fetch Dependabot metadata
@@ -82,3 +83,4 @@ jobs:
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
