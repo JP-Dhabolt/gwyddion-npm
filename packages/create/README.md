@@ -9,7 +9,7 @@ Create a new package meant for packages in the `@gwyddion` scope (but should wor
 ### Scoped with a workspace
 
 ```bash
-npm init -w packages/<name> @gwyddion . --scope=@gwyddion
+npm init -w packages/<name> @gwyddion . -- --scope=@gwyddion
 ```
 
 ### Without a scope
