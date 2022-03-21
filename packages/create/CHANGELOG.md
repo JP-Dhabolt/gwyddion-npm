@@ -1,5 +1,11 @@
 # @gwyddion/create
 
+## 0.1.3
+
+### Patch Changes
+
+- b89c68a: Remove debug logs and fix cleanup
+
 ## 0.1.2
 
 ### Patch Changes
