@@ -17,14 +17,8 @@ create('create-package', {
     },
     isGwyddion: {
       prompt: 'never',
-      type: 'checkbox',
+      type: 'confirm',
       describe: 'Whether this is an @gwyddion scoped package',
-      default: false,
-    },
-    debug: {
-      prompt: 'never',
-      type: 'checkbox',
-      describe: 'Whether debug log statements should be added',
       default: false,
     },
   },
