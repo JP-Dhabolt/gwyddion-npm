@@ -29,8 +29,8 @@ async function createChangeset(fs, packages, context, changesetFile) {
 }
 
 async function getChangedFiles(exec) {
-  const diffOutput = await exec.getExecOutput('git diff --name-only HEAD~1');
-  const diffFiles = diffOutput.split('\n');
+  const { stdout } = await exec.getExecOutput('git diff --name-only HEAD~1');
+  const diffFiles = stdout.split('\n');
   return diffFiles;
 }
 

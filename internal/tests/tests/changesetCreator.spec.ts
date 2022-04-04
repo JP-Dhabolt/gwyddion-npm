@@ -4,7 +4,7 @@ import { handleChangesets } from '../../../scripts/changesetCreator';
 
 const mockChdir = jest.fn();
 const mockExec = {
-  getExecOutput: jest.fn(async () => '.changeset/dependabot-foo.md'),
+  getExecOutput: jest.fn(async () => ({ stdout: '.changeset/dependabot-foo.md' })),
   exec: jest.fn(),
 };
 const mockFs = {
@@ -67,26 +67,26 @@ describe('changesetCreator', () => {
   });
 
   it('should return "NO_CHANGES" if no modified packages', async () => {
-    mockExec.getExecOutput.mockImplementationOnce(async () => 'not-package');
+    mockExec.getExecOutput.mockImplementationOnce(async () => ({ stdout: 'not-package' }));
     const result = await handleChangesets(input);
     expect(result).toEqual('NO_CHANGES');
   });
 
   it('should return "NO_CHANGES" if root package.json changed only', async () => {
-    mockExec.getExecOutput.mockImplementationOnce(async () => 'package.json');
+    mockExec.getExecOutput.mockImplementationOnce(async () => ({ stdout: 'package.json' }));
     const result = await handleChangesets(input);
     expect(result).toEqual('NO_CHANGES');
   });
 
   it('should return "NO_CHANGES" if changed package is private', async () => {
-    mockExec.getExecOutput.mockImplementationOnce(async () => 'internal/foo/package.json');
+    mockExec.getExecOutput.mockImplementationOnce(async () => ({ stdout: 'internal/foo/package.json' }));
     mockFs.readFile.mockImplementationOnce(async () => JSON.stringify({ private: true }));
     const result = await handleChangesets(input);
     expect(result).toEqual('NO_CHANGES');
   });
 
   it('should write a changeset it changed package is public', async () => {
-    mockExec.getExecOutput.mockImplementationOnce(async () => 'packages/foo/package.json');
+    mockExec.getExecOutput.mockImplementationOnce(async () => ({ stdout: 'packages/foo/package.json' }));
     mockFs.readFile.mockImplementationOnce(async () => JSON.stringify({ name: '@scope/foo' }));
     const result = await handleChangesets(input);
     expect(result).toEqual('CHANGES');
@@ -98,7 +98,7 @@ describe('changesetCreator', () => {
   });
 
   it('should should commit and push after changeset is created', async () => {
-    mockExec.getExecOutput.mockImplementationOnce(async () => 'packages/foo/package.json');
+    mockExec.getExecOutput.mockImplementationOnce(async () => ({ stdout: 'packages/foo/package.json' }));
     mockFs.readFile.mockImplementationOnce(async () => JSON.stringify({ name: '@scope/foo' }));
     await handleChangesets(input);
     expect(mockExec.exec).toHaveBeenCalledTimes(3);
