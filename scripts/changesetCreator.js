@@ -23,7 +23,7 @@ async function getPackageFilesWithChangedDependencies(diffFiles, fs) {
 
 async function createChangeset(fs, packages, context, changesetFile) {
   const { title: message } = context.payload.pull_request;
-  const packageFrontMatter = packages.map(p => `${p}: patch`).join('\n');
+  const packageFrontMatter = packages.map(p => `'${p}': patch`).join('\n');
   const fileContents = `---\n${packageFrontMatter}\n---\n\n${message}\n`;
   await fs.writeFile(changesetFile, fileContents);
 }

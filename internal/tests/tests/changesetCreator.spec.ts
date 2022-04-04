@@ -93,7 +93,7 @@ describe('changesetCreator', () => {
     expect(mockFs.writeFile).toHaveBeenCalledTimes(1);
     expect(mockFs.writeFile).toHaveBeenCalledWith(
       '.changeset/dependabot-foo.md',
-      '---\n@scope/foo: patch\n---\n\nbump version\n',
+      "---\n'@scope/foo': patch\n---\n\nbump version\n",
     );
   });
 
