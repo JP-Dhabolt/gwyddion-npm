@@ -14,7 +14,7 @@ jobs:
   create_changeset:
     runs-on: ubuntu-latest
     if: |
-        github.event.pull_request.user.login == 'dependabot[bot]' &&
+        github.actor == 'dependabot[bot]' &&
         github.repository == 'JP-Dhabolt/gwyddion-npm' &&
         startsWith(github.event.pull_request.head.ref, 'dependabot/')
     steps:
@@ -68,7 +68,7 @@ jobs:
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GWYDDION_AUTOMATION_TOKEN }}
 
       - name: Approve PR
         if: |
