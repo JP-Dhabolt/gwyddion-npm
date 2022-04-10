@@ -4,7 +4,7 @@
 # Unignore files we specifically want
 !dist/**/*.js
 !dist/**/*.d.ts
-!templates
+!templates/**/*
 !CHANGELOG.md
 
 # Re-ignore test files
