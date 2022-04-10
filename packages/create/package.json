@@ -1,7 +1,7 @@
 {
   "name": "@gwyddion/create",
   "description": "Create a new package in this repo",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "JP Dhabolt",
   "publishConfig": {
     "access": "public"

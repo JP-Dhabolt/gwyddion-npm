@@ -1,5 +1,11 @@
 # @gwyddion/create
 
+## 0.1.5
+
+### Patch Changes
+
+- ae43c02: Resolve issue where not all template files are bundled in published package.
+
 ## 0.1.4
 
 ### Patch Changes
