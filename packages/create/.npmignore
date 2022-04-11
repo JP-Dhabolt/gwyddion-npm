@@ -2,8 +2,8 @@
 **/*
 
 # Unignore files we specifically want
-!dist/**/*.js
-!dist/**/*.d.ts
+!dist/**/*
+!dist/**/*
 !templates/**/*
 !CHANGELOG.md
 

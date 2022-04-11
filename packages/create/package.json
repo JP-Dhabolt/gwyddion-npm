@@ -13,10 +13,6 @@
     "test": "exit 0"
   },
   "bin": "dist/cli.js",
-  "files": [
-    "dist",
-    "templates"
-  ],
   "dependencies": {
     "create-create-app": "^7.2.0"
   },
