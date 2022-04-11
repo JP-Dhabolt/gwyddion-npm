@@ -19,6 +19,7 @@ function cleanupCrapThatCreateAppCliGeneratesWithoutAsking({
 
 function standardAfterWork({ packageDir }: Pick<AfterHookOptions, 'packageDir'>): void {
   fs.renameSync(resolve(packageDir, 'package.json.handlebars'), resolve(packageDir, 'package.json'));
+  fs.renameSync(resolve(packageDir, '.npmignore.template'), resolve(packageDir, '.npmignore'));
 }
 
 export async function after({ run, packageDir, answers }: AfterHookOptions): Promise<void> {
