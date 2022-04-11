@@ -1,5 +1,11 @@
 # @gwyddion/create
 
+## 0.1.6
+
+### Patch Changes
+
+- c7b9973: Rename npmignore in template to prevent npm from ignoring the template itself by reading the file
+
 ## 0.1.5
 
 ### Patch Changes
