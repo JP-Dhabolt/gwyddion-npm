@@ -1,0 +1,40 @@
+{
+  "name": "@gwyddion/react-components",
+  "version": "0.1.0",
+  "description": "Library of React components",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/cjs/index.d.ts"
+  },
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "test": "jest --coverage",
+    "watch": "jest --watch",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -b",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+    "check": "tsc --noEmit",
+    "package": "gwyddionPackage"
+  },
+  "keywords": [],
+  "author": "JP Dhabolt",
+  "license": "ISC",
+  "devDependencies": {
+    "react": "^17.0.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JP-Dhabolt/gwyddion-npm.git",
+    "directory": "packages/react-components"
+  },
+  "bugs": {
+    "url": "https://github.com/JP-Dhabolt/gwyddion-npm/issues"
+  },
+  "homepage": "https://github.com/JP-Dhabolt/gwyddion-npm/tree/main/packages/react-components"
+}
