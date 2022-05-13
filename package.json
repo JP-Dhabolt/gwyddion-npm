@@ -21,12 +21,12 @@
     "typescript": "^4.6.4"
   },
   "scripts": {
-    "test": "npm run test --workspaces",
-    "build": "npm run build --workspaces --if-present",
-    "check": "npm run check --workspaces --if-present",
+    "test": "yarn workspaces run test",
+    "build": "yarn workspaces run build",
+    "check": "yarn workspaces run check",
     "lint": "eslint --fix --ext .js --ext .ts --ext .jsx --ext .tsx .",
     "lint:ci": "eslint --ext .js --ext .ts --ext .jsx --ext .tsx .",
-    "package": "npm run package --workspaces --if-present"
+    "package": "yarn workspaces run package"
   },
   "engines": {
     "node": "14 || 16"

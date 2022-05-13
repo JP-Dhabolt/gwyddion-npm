@@ -2,19 +2,16 @@ import fs from 'fs';
 import { resolve } from 'path';
 import { AfterHookOptions } from 'create-create-app';
 
-function cleanupCrapThatCreateAppCliGeneratesWithoutAsking({
-  run,
-  packageDir,
-}: Pick<AfterHookOptions, 'run' | 'packageDir'>): void {
+function cleanupCrapThatCreateAppCliGeneratesWithoutAsking({ packageDir }: Pick<AfterHookOptions, 'packageDir'>): void {
   fs.rmSync(resolve(packageDir, '.git'), {
     recursive: true,
     force: true,
   });
-  fs.unlinkSync(resolve(packageDir, 'LICENSE'));
-
-  run('npm install', {
-    cwd: resolve(packageDir, '..', '..'),
-  });
+  try {
+    fs.unlinkSync(resolve(packageDir, 'LICENSE'));
+  } catch {
+    // Ignore failure to remove LICENSE, which is not always generated.
+  }
 }
 
 function standardAfterWork({ packageDir }: Pick<AfterHookOptions, 'packageDir'>): void {
@@ -22,10 +19,10 @@ function standardAfterWork({ packageDir }: Pick<AfterHookOptions, 'packageDir'>)
   fs.renameSync(resolve(packageDir, '.npmignore.template'), resolve(packageDir, '.npmignore'));
 }
 
-export async function after({ run, packageDir, answers }: AfterHookOptions): Promise<void> {
+export async function after({ packageDir, answers }: AfterHookOptions): Promise<void> {
   standardAfterWork({ packageDir });
 
   if (answers.isGwyddion) {
-    cleanupCrapThatCreateAppCliGeneratesWithoutAsking({ run, packageDir });
+    cleanupCrapThatCreateAppCliGeneratesWithoutAsking({ packageDir });
   }
 }
