@@ -70,7 +70,9 @@ build:
 verify: install test-ci lint-ci build
 
 package:
-	yarn run @gwyddion/create --scope=@gwyddion --isGwyddion=true --license=ISC
+	yarn workspace @gwyddion/create run build
+	chmod +x packages/create/dist/cli.js
+	cd packages && ./create/dist/cli.js ${name} --scope=@gwyddion --isGwyddion=true --license=ISC
 
 precommit: check lint-staged
 
