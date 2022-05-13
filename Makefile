@@ -44,39 +44,41 @@ help:
 	@echo ""
 
 install:
-	npm ci
+	yarn install --frozen-lockfile
 
 setup: install
-	npx husky install
+	yarn run husky install
 
 test-ci:
-	npm run test
+	yarn run test
 
 lint:
-	npm run lint
+	yarn run lint
 
 lint-ci:
-	npm run lint:ci
+	yarn run lint:ci
 
 lint-staged:
-	npx lint-staged
+	yarn run lint-staged
 
 check:
-	npm run check
+	yarn run check
 
 build:
-	npm run build
+	yarn run build
 
 verify: install test-ci lint-ci build
 
 package:
-	npm init -w packages/${name} @gwyddion . -- --scope=@gwyddion --isGwyddion=true --license=ISC
+	yarn workspace @gwyddion/create run build
+	chmod +x packages/create/dist/cli.js
+	cd packages && ./create/dist/cli.js ${name} --scope=@gwyddion --isGwyddion=true --license=ISC
 
 precommit: check lint-staged
 
 changeset:
-	npx changeset
+	yarn run changeset
 
 publish: build
-	npm run package
-	npx changeset publish
+	yarn run package
+	yarn run changeset publish

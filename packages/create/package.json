@@ -1,7 +1,7 @@
 {
   "name": "@gwyddion/create",
   "description": "Create a new package in this repo",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "author": "JP Dhabolt",
   "publishConfig": {
     "access": "public"
@@ -15,6 +15,11 @@
   "bin": "dist/cli.js",
   "dependencies": {
     "create-create-app": "^7.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "@gwyddion/config": "^0.1.0",
+    "jest": "^27.5.1"
   },
   "license": "ISC",
   "keywords": [],
