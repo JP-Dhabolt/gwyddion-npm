@@ -1,5 +1,11 @@
 # @gwyddion/create
 
+## 0.1.7
+
+### Patch Changes
+
+- f02d7c8: Update package.json in template to include certain devDependencies regardless of configuration
+
 ## 0.1.6
 
 ### Patch Changes
