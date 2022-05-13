@@ -11,9 +11,6 @@ jobs:
     name: Publish
     runs-on: ubuntu-latest
 
-    env:
-      NPM_VERSION: '8.4.1'
-
     steps:
       - uses: actions/checkout@v3
 
@@ -21,10 +18,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '14'
-          cache: npm
-
-      - name: Pin npm version
-        run: npm i -g npm@$NPM_VERSION
+          cache: yarn
 
       - name: Install Dependencies
         run: make install
