@@ -9,6 +9,7 @@ const templateRoot = resolve(__dirname, '..', 'templates');
 
 create('create-package', {
   templateRoot,
+  promptForTemplate: true,
   extra: {
     scope: {
       prompt: 'never',
