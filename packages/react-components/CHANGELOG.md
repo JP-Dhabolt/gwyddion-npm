@@ -1,5 +1,11 @@
 # @gwyddion/react-components
 
+## 0.1.3
+
+### Patch Changes
+
+- 6ab7661: Add optional props to dummy button component for testing
+
 ## 0.1.2
 
 ### Patch Changes
