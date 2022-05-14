@@ -33,6 +33,9 @@ help:
 	@echo "make package name=<pkg-name>"
 	@echo "    add a new package to the repo"
 	@echo ""
+	@echo "make package-local name=<pkg-name>"
+	@echo "    add a new package to the repo using local logic"
+	@echo ""
 	@echo "make precommit"
 	@echo "    run all pre-commit hook checks"
 	@echo ""
@@ -70,6 +73,9 @@ build:
 verify: install test-ci lint-ci build
 
 package:
+	cd packages && yarn create @gwyddion ${name} --scope=@gwyddion --isGwyddion=true --license=ISC
+
+package-local:
 	yarn workspace @gwyddion/create run build
 	chmod +x packages/create/dist/cli.js
 	cd packages && ./create/dist/cli.js ${name} --scope=@gwyddion --isGwyddion=true --license=ISC
