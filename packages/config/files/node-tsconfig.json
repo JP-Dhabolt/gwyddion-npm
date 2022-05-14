@@ -9,7 +9,8 @@
 
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
     "removeComments": false,
     "stripInternal": true,
 
