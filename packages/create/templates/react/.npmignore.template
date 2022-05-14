@@ -5,6 +5,7 @@
 !dist/**/*.js
 !dist/**/*.d.ts
 !CHANGELOG.md
+!dist/**/*.map
 
 # Re-ignore test files
 dist/**/*.spec.js
