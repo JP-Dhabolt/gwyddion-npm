@@ -3,7 +3,9 @@
   "version": "0.1.1",
   "description": "Test package to determine if a number is odd",
   "publishConfig": {
-    "access": "public",
+    "access": "public"
+  },
+  "overrideConfig": {
     "main": "dist/index.js",
     "types": "dist/index.d.ts"
   },

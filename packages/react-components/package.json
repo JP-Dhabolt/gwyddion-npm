@@ -1,0 +1,48 @@
+{
+  "name": "@gwyddion/react-components",
+  "version": "0.1.0",
+  "description": "Library of React components",
+  "publishConfig": {
+    "access": "public"
+  },
+  "overrideConfig": {
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/cjs/index.d.ts"
+  },
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "test": "jest --coverage",
+    "watch": "jest --watch",
+    "build": "rm -rf dist && yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc -b",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+    "check": "tsc --noEmit",
+    "package": "gwyddionPackage"
+  },
+  "keywords": [],
+  "author": "JP Dhabolt",
+  "license": "ISC",
+  "devDependencies": {
+    "@gwyddion/config": "^0.1.1",
+    "@testing-library/react": "^13.2.0",
+    "@types/react": "^18.0.9",
+    "jest": "^27.5.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "typescript": "^4.6.4"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JP-Dhabolt/gwyddion-npm.git",
+    "directory": "packages/react-components"
+  },
+  "bugs": {
+    "url": "https://github.com/JP-Dhabolt/gwyddion-npm/issues"
+  },
+  "homepage": "https://github.com/JP-Dhabolt/gwyddion-npm/tree/main/packages/react-components"
+}

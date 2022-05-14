@@ -1,0 +1,14 @@
+{
+  "extends": "@gwyddion/config/files/react-tsconfig.json",
+  "include": [
+    "./**/*.ts",
+    "./**/*.tsx"
+  ],
+  "exclude": [
+    "dist"
+  ],
+  "compilerOptions": {
+    "outDir": "dist/esm",
+    "rootDir": "src"
+  },
+}

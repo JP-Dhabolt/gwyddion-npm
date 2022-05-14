@@ -6,26 +6,36 @@
     "access": "public"
   },
   "overrideConfig": {
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts"
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/cjs/index.d.ts"
   },
   "main": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
     "test": "jest --coverage",
     "watch": "jest --watch",
-    "build": "tsc -b .",
+    "build": "rm -rf dist && yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc -b",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
     "check": "tsc --noEmit",
     "package": "gwyddionPackage"
   },
   "keywords": [],
   "author": "{{author}}",
   "license": "{{license}}",
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
 {{#if isGwyddion}}
   "devDependencies": {
-    "@gwyddion/config": "^0.1.0",
+    "@gwyddion/config": "^0.1.1",
+    "@testing-library/react": "^13.2.0",
+    "@types/react": "^18.0.9",
     "jest": "^27.5.1",
-    "typescript": "^4.5.5"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "typescript": "^4.6.4"
   },
   "repository": {
     "type": "git",
@@ -55,7 +65,12 @@
     "lint-staged": "^12.3.3",
     "prettier": "^2.6.0",
     "ts-jest": "^27.1.3",
-    "typescript": "^4.5.5"
+    "typescript": "^4.5.5",
+    "@testing-library/react": "^13.2.0",
+    "@types/react": "^18.0.9",
+    "jest": "^27.5.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 {{/if}}
 }
