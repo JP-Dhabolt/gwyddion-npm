@@ -1,5 +1,11 @@
 # @gwyddion/config
 
+## 0.1.3
+
+### Patch Changes
+
+- ce7d2b7: Inline sources and sourcemaps
+
 ## 0.1.2
 
 ### Patch Changes

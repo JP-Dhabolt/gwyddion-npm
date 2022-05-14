@@ -1,5 +1,13 @@
 # @gwyddion/is-odd
 
+## 0.1.3
+
+### Patch Changes
+
+- ce7d2b7: Inline sources and sourcemaps
+- Updated dependencies [ce7d2b7]
+  - @gwyddion/is-even@0.1.4
+
 ## 0.1.2
 
 ### Patch Changes

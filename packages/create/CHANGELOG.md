@@ -1,5 +1,11 @@
 # @gwyddion/create
 
+## 0.2.2
+
+### Patch Changes
+
+- ce7d2b7: Inline sources and sourcemaps
+
 ## 0.2.1
 
 ### Patch Changes
