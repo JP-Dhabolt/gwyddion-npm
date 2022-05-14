@@ -1,5 +1,11 @@
 # @gwyddion/create
 
+## 0.2.1
+
+### Patch Changes
+
+- 5a895d3: Bundle map files in published distributions
+
 ## 0.2.0
 
 ### Minor Changes

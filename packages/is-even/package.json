@@ -1,6 +1,6 @@
 {
   "name": "@gwyddion/is-even",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Test package to determine if a number is even",
   "publishConfig": {
     "access": "public"

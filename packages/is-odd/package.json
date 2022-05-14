@@ -1,6 +1,6 @@
 {
   "name": "@gwyddion/is-odd",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Test package to determine if a number is odd",
   "publishConfig": {
     "access": "public"
@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/JP-Dhabolt/gwyddion-npm/tree/main/packages/is-odd",
   "dependencies": {
-    "@gwyddion/is-even": "^0.1.2"
+    "@gwyddion/is-even": "^0.1.3"
   },
   "devDependencies": {
     "@gwyddion/config": "^0.1.1",
