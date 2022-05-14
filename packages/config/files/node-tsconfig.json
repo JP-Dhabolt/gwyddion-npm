@@ -8,7 +8,7 @@
     "composite": true,
 
     "declaration": true,
-    "declarationMap": true,
+    "declarationMap": false,
     "inlineSourceMap": true,
     "inlineSources": true,
     "removeComments": false,
