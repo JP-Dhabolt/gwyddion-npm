@@ -1,5 +1,15 @@
 # @gwyddion/create
 
+## 0.2.0
+
+### Minor Changes
+
+- 42757b4: \* Add new 'react' template for creating React Component Libraries.
+
+  - **BREAKING**: Update CLI to prompt for template if not provided via the `--template` flag.
+
+  - Update package.json template to match new gwyddionPackage command expectations.
+
 ## 0.1.7
 
 ### Patch Changes
