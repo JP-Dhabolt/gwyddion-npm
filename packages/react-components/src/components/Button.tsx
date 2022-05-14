@@ -1,5 +1,11 @@
-export const Button = () => (
+import { FC, ReactNode } from 'react';
+
+export interface ButtonProps {
+  children?: ReactNode;
+}
+
+export const Button: FC<ButtonProps> = ({ children }) => (
   <div>
-    <button>Click Me!</button>
+    <button>{children}</button>
   </div>
 );

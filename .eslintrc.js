@@ -4,6 +4,7 @@ module.exports = {
     '@spotify/eslint-config-typescript',
     'prettier',
     'plugin:jest/recommended',
+    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['import', 'prettier'],
@@ -27,14 +28,14 @@ module.exports = {
       'error',
       {
         devDependencies: [
-            '**/*.spec.*',
-            '**/*.stories.*',
-            '**/src/setupTests.*',
-          ],
+          '**/*.spec.*',
+          '**/*.stories.*',
+          '**/src/setupTests.*',
+        ],
         optionalDependencies: true,
         peerDependencies: true,
         bundledDependencies: true,
       },
     ],
-  }
+  },
 };

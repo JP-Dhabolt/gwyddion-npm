@@ -1,4 +1,4 @@
-.PHONY: help install setup test-ci lint lint-ci lint-staged check build verify package precommit changeset publish
+.PHONY: help install setup test-ci lint lint-ci lint-staged check build verify package package-local precommit changeset publish storybook
 
 .DEFAULT: help
 
@@ -45,6 +45,9 @@ help:
 	@echo "make publish"
 	@echo "    Publish the current changes (meant for automation only)"
 	@echo ""
+	@echo "make storybook"
+	@echo "    Start the Storybook server"
+	@echo ""
 
 install:
 	yarn install --frozen-lockfile
@@ -88,3 +91,6 @@ changeset:
 publish: build
 	yarn run package
 	yarn run changeset publish
+
+storybook:
+	yarn workspace storybook storybook

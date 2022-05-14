@@ -3,7 +3,12 @@ import { Button } from './Button';
 
 describe('index', () => {
   it('should render', () => {
-    const screen = render(<Button />);
-    expect(screen.findByText('Click Me!')).toBeDefined();
+    const buttonText = 'This is my text';
+    const screen = render(
+      <Button>
+        <div>{buttonText}</div>
+      </Button>,
+    );
+    expect(screen.findByText(buttonText)).toBeDefined();
   });
 });
