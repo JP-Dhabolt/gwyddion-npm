@@ -1,0 +1,29 @@
+{
+  "name": "storybook",
+  "description": "Storybook component library",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@storybook/addon-actions": "^6.4.22",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-interactions": "^6.4.22",
+    "@storybook/addon-links": "^6.4.22",
+    "@storybook/cli": "^6.4.22",
+    "@storybook/react": "^6.4.22",
+    "@storybook/testing-library": "^0.0.11",
+    "babel-loader": "^8.2.5"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "test": "exit 0",
+    "build": "exit 0",
+    "check": "exit 0",
+    "package": "exit 0"
+  },
+  "dependencies": {
+    "react": "^18.1.0",
+    "@gwyddion/react-components": "^0.1.2"
+  }
+}
