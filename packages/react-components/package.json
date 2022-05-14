@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Library of React components",
   "publishConfig": {
-    "access": "public",
+    "access": "public"
+  },
+  "overrideConfig": {
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
     "types": "dist/cjs/index.d.ts"
@@ -23,7 +25,9 @@
   "author": "JP Dhabolt",
   "license": "ISC",
   "devDependencies": {
-    "react": "^17.0.0"
+    "react": "^17.0.0",
+    "typescript": "^4.6.4",
+    "@gwyddion/config": "^0.1.1"
   },
   "peerDependencies": {
     "react": "^17.0.0"
