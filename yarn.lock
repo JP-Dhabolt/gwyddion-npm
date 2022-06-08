@@ -2475,19 +2475,19 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/cli@^6.5.6":
-  version "6.5.6"
-  resolved "https://registry.yarnpkg.com/@storybook/cli/-/cli-6.5.6.tgz#104c3a008a79aa9361f218302dd9297496e4e01b"
-  integrity sha512-HZ8q3RY/RKo7QXWAcjeXFSbSN/lDt3tsKBYO+6QF4PVY54oLoNLJXf8OlLyOumIC1e+BySEakFOroTvMhmQ/eg==
+"@storybook/cli@^6.5.7":
+  version "6.5.7"
+  resolved "https://registry.yarnpkg.com/@storybook/cli/-/cli-6.5.7.tgz#db8b3e834be08d84601667b18e80454b84265612"
+  integrity sha512-W6XAA7IXVHkJWb4ghMXTXBbqaqwQ/Ijmb7Rdtwcc1qr2UbMa++m6bsuahIa1AcK1OwNPMO3WwSW0iLt4mhXHEQ==
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/preset-env" "^7.12.11"
-    "@storybook/codemod" "6.5.6"
-    "@storybook/core-common" "6.5.6"
-    "@storybook/csf-tools" "6.5.6"
-    "@storybook/node-logger" "6.5.6"
+    "@storybook/codemod" "6.5.7"
+    "@storybook/core-common" "6.5.7"
+    "@storybook/csf-tools" "6.5.7"
+    "@storybook/node-logger" "6.5.7"
     "@storybook/semver" "^7.3.2"
-    "@storybook/telemetry" "6.5.6"
+    "@storybook/telemetry" "6.5.7"
     boxen "^5.1.2"
     chalk "^4.1.0"
     commander "^6.2.1"
@@ -2560,16 +2560,24 @@
     core-js "^3.8.2"
     global "^4.4.0"
 
-"@storybook/codemod@6.5.6":
-  version "6.5.6"
-  resolved "https://registry.yarnpkg.com/@storybook/codemod/-/codemod-6.5.6.tgz#6322b3d08a617c76b1d6619dcf30daee48cd1573"
-  integrity sha512-O5XI9bZPf417HX/GwSbCaSfN8zUg6Iu4+trM/dgiOEMHzZgLNViHNAaHI295B88H1bg8NCl4Mfs7pqYabYXbBQ==
+"@storybook/client-logger@6.5.7":
+  version "6.5.7"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-6.5.7.tgz#97a607b1d09d32a31091fe286510cf5d3995d2bf"
+  integrity sha512-ycDy1kXeXRg3djSTXRGMVxc0kvaWw/UhHDs2VGFmOPScsoeWpdbePHXJMFbsqippxuexpsofqTryBwH2b6BPhw==
+  dependencies:
+    core-js "^3.8.2"
+    global "^4.4.0"
+
+"@storybook/codemod@6.5.7":
+  version "6.5.7"
+  resolved "https://registry.yarnpkg.com/@storybook/codemod/-/codemod-6.5.7.tgz#4b868dcfe5f4f16722b56e8f166181221b92464b"
+  integrity sha512-R3W6ELnap7Uy1kqRrVhv3qVefSL/AG4Fr6nxGgd2GmNNwfCvK6vlnb1Q1oaiByv/dT03kz1ovaZ6QzbtPkggnw==
   dependencies:
     "@babel/types" "^7.12.11"
     "@mdx-js/mdx" "^1.6.22"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/csf-tools" "6.5.6"
-    "@storybook/node-logger" "6.5.6"
+    "@storybook/csf-tools" "6.5.7"
+    "@storybook/node-logger" "6.5.7"
     core-js "^3.8.2"
     cross-spawn "^7.0.3"
     globby "^11.0.2"
@@ -2832,6 +2840,62 @@
     util-deprecate "^1.0.2"
     webpack "4"
 
+"@storybook/core-common@6.5.7":
+  version "6.5.7"
+  resolved "https://registry.yarnpkg.com/@storybook/core-common/-/core-common-6.5.7.tgz#69519d02b48c719fba734b38bb6a4419abc77a4b"
+  integrity sha512-/b1oQlmhek8tKDu9ky2O1oEk9g2giAPpl192yRz4lIxap5CFJ7RCfgbkq+F3JBXnH2P84BufC0x3dj4jvBhxCw==
+  dependencies:
+    "@babel/core" "^7.12.10"
+    "@babel/plugin-proposal-class-properties" "^7.12.1"
+    "@babel/plugin-proposal-decorators" "^7.12.12"
+    "@babel/plugin-proposal-export-default-from" "^7.12.1"
+    "@babel/plugin-proposal-nullish-coalescing-operator" "^7.12.1"
+    "@babel/plugin-proposal-object-rest-spread" "^7.12.1"
+    "@babel/plugin-proposal-optional-chaining" "^7.12.7"
+    "@babel/plugin-proposal-private-methods" "^7.12.1"
+    "@babel/plugin-proposal-private-property-in-object" "^7.12.1"
+    "@babel/plugin-syntax-dynamic-import" "^7.8.3"
+    "@babel/plugin-transform-arrow-functions" "^7.12.1"
+    "@babel/plugin-transform-block-scoping" "^7.12.12"
+    "@babel/plugin-transform-classes" "^7.12.1"
+    "@babel/plugin-transform-destructuring" "^7.12.1"
+    "@babel/plugin-transform-for-of" "^7.12.1"
+    "@babel/plugin-transform-parameters" "^7.12.1"
+    "@babel/plugin-transform-shorthand-properties" "^7.12.1"
+    "@babel/plugin-transform-spread" "^7.12.1"
+    "@babel/preset-env" "^7.12.11"
+    "@babel/preset-react" "^7.12.10"
+    "@babel/preset-typescript" "^7.12.7"
+    "@babel/register" "^7.12.1"
+    "@storybook/node-logger" "6.5.7"
+    "@storybook/semver" "^7.3.2"
+    "@types/node" "^14.0.10 || ^16.0.0"
+    "@types/pretty-hrtime" "^1.0.0"
+    babel-loader "^8.0.0"
+    babel-plugin-macros "^3.0.1"
+    babel-plugin-polyfill-corejs3 "^0.1.0"
+    chalk "^4.1.0"
+    core-js "^3.8.2"
+    express "^4.17.1"
+    file-system-cache "^1.0.5"
+    find-up "^5.0.0"
+    fork-ts-checker-webpack-plugin "^6.0.4"
+    fs-extra "^9.0.1"
+    glob "^7.1.6"
+    handlebars "^4.7.7"
+    interpret "^2.2.0"
+    json5 "^2.1.3"
+    lazy-universal-dotenv "^3.0.1"
+    picomatch "^2.3.0"
+    pkg-dir "^5.0.0"
+    pretty-hrtime "^1.0.3"
+    resolve-from "^5.0.0"
+    slash "^3.0.0"
+    telejson "^6.0.8"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+    webpack "4"
+
 "@storybook/core-events@6.4.22":
   version "6.4.22"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-6.4.22.tgz#c09b0571951affd4254028b8958a4d8652700989"
@@ -2932,10 +2996,10 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/csf-tools@6.5.6":
-  version "6.5.6"
-  resolved "https://registry.yarnpkg.com/@storybook/csf-tools/-/csf-tools-6.5.6.tgz#147ced43313ee217c41b00d5fe32a80cb29b03bd"
-  integrity sha512-Gfah+5mEUoVG7v+E23svRjKAh546KCPIcwAvGU3m26j3hNbpvKq8edKDr+CCMfehG8VEGSZWfZPsgX04c/ItcA==
+"@storybook/csf-tools@6.5.7":
+  version "6.5.7"
+  resolved "https://registry.yarnpkg.com/@storybook/csf-tools/-/csf-tools-6.5.7.tgz#93780a2eee892c1c92f33a0be1d3fd52cda770ce"
+  integrity sha512-/vBaknzD8c7H/Zsz0gwhmlNlMwe5slZwXadi6rAQXDkKLzaR1kmz4cQFs8yDR1wWpXaGjNvQxOUAGYjFoGQxzA==
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/generator" "^7.12.11"
@@ -3099,6 +3163,17 @@
   version "6.5.6"
   resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-6.5.6.tgz#24422886f894978b10c2e23feb6bf0657f5e514f"
   integrity sha512-bT0R0skDWW9iJS8AIG9zfSF8XzTffdc8hRlpXUF9+VQKds+8H9FyoV4tl8ySCuNNunt8Ic9GvW3Fakq49FUcgw==
+  dependencies:
+    "@types/npmlog" "^4.1.2"
+    chalk "^4.1.0"
+    core-js "^3.8.2"
+    npmlog "^5.0.1"
+    pretty-hrtime "^1.0.3"
+
+"@storybook/node-logger@6.5.7":
+  version "6.5.7"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-6.5.7.tgz#a31d91be3cd9d9f033d340b1dc2b8e1c0de61cb6"
+  integrity sha512-OrHu5p2E5i7P2v2hQAOtZw6Od1e2nrP6L7w5SxUPgccUnKUD9dRX5Y8qbAcPZO3XCkMLjpjAbC1xBXG0eFkn9g==
   dependencies:
     "@types/npmlog" "^4.1.2"
     chalk "^4.1.0"
@@ -3301,13 +3376,13 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/telemetry@6.5.6":
-  version "6.5.6"
-  resolved "https://registry.yarnpkg.com/@storybook/telemetry/-/telemetry-6.5.6.tgz#a7da1fa0019b307ceac24e65ff1e14ee0f36a8a5"
-  integrity sha512-l0vbStCgVA9u0ITvowZ1LNxmf32vAAdnPqSmB9DdA3ZO2wCpttW9rPyg1O4OV8c5uq7QJZ7mrKZ04p9SLo8wrw==
+"@storybook/telemetry@6.5.7":
+  version "6.5.7"
+  resolved "https://registry.yarnpkg.com/@storybook/telemetry/-/telemetry-6.5.7.tgz#744050ec84b8d8effeab448b9b2e190951a2e070"
+  integrity sha512-RHrjAConMqGIsu1TgNXztWtWOXTvvCHDWyGoLagCgZYgjGJ4sukp+ZtrbkayNDkkWWD0lpMzsdDEYCJuru/Sig==
   dependencies:
-    "@storybook/client-logger" "6.5.6"
-    "@storybook/core-common" "6.5.6"
+    "@storybook/client-logger" "6.5.7"
+    "@storybook/core-common" "6.5.7"
     chalk "^4.1.0"
     core-js "^3.8.2"
     detect-package-manager "^2.0.1"
