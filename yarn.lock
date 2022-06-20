@@ -3552,10 +3552,10 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/create-react-app/-/create-react-app-1.0.2.tgz#e05e2d209b98e21665ed4097fe2d37f638447b0e"
   integrity sha512-Vg+pErSM6hTcSzxPqNwFg0dk+y0R1Obp8uLV1MDdfd7j98FyOFqtqkdxb9wqIx9vtDW5GCH7zg6DyoHJzMT12g==
 
-"@tsconfig/node14@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@tsconfig/node14/-/node14-1.0.1.tgz#95f2d167ffb9b8d2068b0b235302fafd4df711f2"
-  integrity sha512-509r2+yARFfHHE7T6Puu2jjkoycftovhXRqW328PDXTVGKihlb1P8Z9mMZH04ebyajfRY7dedfGynlrFHJUQCg==
+"@tsconfig/node14@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@tsconfig/node14/-/node14-1.0.3.tgz#e4386316284f00b98435bf40f72f75a09dabf6c1"
+  integrity sha512-ysT8mhdixWK6Hw3i1V2AeRqZ5WfXg1G43mqoYlM2nc6388Fq5jcXyr5mRsqViLx/GJYdoL0bfXD8nmF+Zn/Iow==
 
 "@types/aria-query@^4.2.0":
   version "4.2.2"

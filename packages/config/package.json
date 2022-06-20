@@ -28,6 +28,6 @@
   "homepage": "https://github.com/JP-Dhabolt/gwyddion-npm/tree/main/packages/config",
   "dependencies": {
     "@tsconfig/create-react-app": "^1.0.2",
-    "@tsconfig/node14": "^1.0.1"
+    "@tsconfig/node14": "^1.0.3"
   }
 }
