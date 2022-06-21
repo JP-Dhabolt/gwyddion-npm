@@ -1,5 +1,11 @@
 # @gwyddion/config
 
+## 0.1.4
+
+### Patch Changes
+
+- c6648fe: Bump @tsconfig/node14 from 1.0.1 to 1.0.3
+
 ## 0.1.3
 
 ### Patch Changes
