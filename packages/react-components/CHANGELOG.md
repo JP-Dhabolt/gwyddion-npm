@@ -1,5 +1,11 @@
 # @gwyddion/react-components
 
+## 0.1.4
+
+### Patch Changes
+
+- cb3a91d: Bump react and @types/react
+
 ## 0.1.3
 
 ### Patch Changes
