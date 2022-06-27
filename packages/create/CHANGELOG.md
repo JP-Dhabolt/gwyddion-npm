@@ -1,5 +1,11 @@
 # @gwyddion/create
 
+## 0.2.3
+
+### Patch Changes
+
+- 3daf278: Bump create-create-app from 7.2.0 to 7.2.1
+
 ## 0.2.2
 
 ### Patch Changes
