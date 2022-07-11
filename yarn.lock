@@ -5927,10 +5927,10 @@ cpy@^8.1.2:
     p-filter "^2.1.0"
     p-map "^3.0.0"
 
-create-create-app@^7.2.1:
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/create-create-app/-/create-create-app-7.2.1.tgz#fdc386d5e8d3045f0fa954643991ec1384c6dbd9"
-  integrity sha512-SajhU/+l/2SwXbT2j9ZBpvLOFawYmxZDXxKHT4Efe5OvtKnoJT+e8Cv1fur5MtqulP7lUZo66ybODE+EfSrUhA==
+create-create-app@^7.3.0:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/create-create-app/-/create-create-app-7.3.0.tgz#d867edabc758167ba6ebca139d79484e8131c72c"
+  integrity sha512-4BzSuq75JihB3hvFQHu1mqPDLUBcR3u5N9yShG6LSv84O7NjTNc/hE+cgDlSJZzfgr7LRahtI5FwPxLyVi/oPg==
   dependencies:
     "@types/yargs-interactive" "^2.1.3"
     chalk "^4"
