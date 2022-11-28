@@ -3,7 +3,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.23.0",
     "@spotify/eslint-config-base": "^13.0.1",
-    "@spotify/eslint-config-typescript": "^13.0.1",
+    "@spotify/eslint-config-typescript": "^14.1.1",
     "@types/jest": "^27.5.0",
     "@types/node": "^17.0.45",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
