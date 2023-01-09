@@ -2020,10 +2020,10 @@
   resolved "https://registry.yarnpkg.com/@spotify/eslint-config-base/-/eslint-config-base-13.0.1.tgz#91471028de6426a1f1a5cc06aa9aeb6d8c85565f"
   integrity sha512-7dC5zMJpNud9UBCHVk/IWfZOXKyuRkcyopHzTJi3xsfmZcZvi0jTSVIf7sv8315lpjmqroVZoUdKbxZFkZcZpA==
 
-"@spotify/eslint-config-typescript@^13.0.1":
-  version "13.0.1"
-  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-typescript/-/eslint-config-typescript-13.0.1.tgz#47801a66d5569074a110f4422eba60aafc6bd7f8"
-  integrity sha512-1wLQFyN2H2v+rn/mytA2PGzmGxOmdZdcKBpNyW+4z0qJydpvavp2SeBj/X+FEbwKoYBoUdG9QLr40eLQh1ZHZA==
+"@spotify/eslint-config-typescript@^14.1.3":
+  version "14.1.3"
+  resolved "https://registry.yarnpkg.com/@spotify/eslint-config-typescript/-/eslint-config-typescript-14.1.3.tgz#37de8d3cdb4b42ed473cf1dc14dcc147c10b63d2"
+  integrity sha512-dqHuWIyq73J3QkDAO0DIokouex7e+xMpx2XeNmaa4DmLyU7AoYUqd6LEoLdq8w5cJouuVHHNxBOQEw9TAH5zhw==
 
 "@storybook/addon-actions@6.5.9", "@storybook/addon-actions@^6.5.6":
   version "6.5.9"
